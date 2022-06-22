@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ParkingLotService } from '../parkinglot/parkinglot.service';
+import { Vehicle } from './vehicle.model';
 
 @Component({
   selector: 'app-vehicle',
@@ -9,16 +11,15 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class VehicleComponent implements OnInit {
   vehicleForm: FormGroup;
 
-  constructor() { }
+  constructor(private vehicleValetService: ParkingLotService) { }
 
   ngOnInit(): void {
-    this.vehicleForm = new FormGroup({
-      'make': new FormControl(null),
-      'model': new FormControl(null),
-      'color': new FormControl(null),
-      'firstName': new FormControl(null),
-      'lastName': new FormControl(null),
-    });
+    this.vehicleForm = this.vehicleValetService.getForm()
   }
 
+  
+
+
+  
+  
 }

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ParkinglotComponent } from './parkinglot.component';
+import { NgbdTableFiltering } from './parkinglot.component';
 
 describe('ParkinglotComponent', () => {
-  let component: ParkinglotComponent;
-  let fixture: ComponentFixture<ParkinglotComponent>;
+  let component: NgbdTableFiltering;
+  let fixture: ComponentFixture<NgbdTableFiltering>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ParkinglotComponent ]
+      declarations: [ NgbdTableFiltering ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ParkinglotComponent);
+    fixture = TestBed.createComponent(NgbdTableFiltering);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

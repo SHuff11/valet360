@@ -24,41 +24,10 @@ export class DatetimeModalComponent {
   closeResult: string;
 
   constructor(private modalService: NgbModal) {}
-
-  openBackDropCustomClass(content) {
-    this.modalService.open(content, { backdropClass: 'light-blue-backdrop' });
-  }
-
-  openWindowCustomClass(content) {
-    this.modalService.open(content, { windowClass: 'dark-modal' });
-  }
-
-  openSm(content) {
-    this.modalService.open(content, { size: 'sm' });
-  }
-
-  openLg(content) {
-    this.modalService.open(content, { size: 'lg' });
-  }
-
-  openXl(content) {
-    this.modalService.open(content, { size: 'xl' });
-  }
-
-  openFullscreen(content) {
-    this.modalService.open(content, { fullscreen: true });
-  }
+  
 
   openVerticallyCentered(content) {
     this.modalService.open(content, { centered: true });
-  }
-
-  openScrollableContent(longContent) {
-    this.modalService.open(longContent, { scrollable: true });
-  }
-
-  openModalDialogCustomClass(content) {
-    this.modalService.open(content, { modalDialogClass: 'dark-modal' });
   }
 
   onSubmit(date, time) {

@@ -6,7 +6,7 @@ import { DatetimemodalModule } from '../shared/datetime-modal/datetime.module';
 import { VehicleComponent } from './vehicle.component';
 
 @NgModule({
-  imports: [BrowserModule, NgbModule,DatetimemodalModule, ReactiveFormsModule],
+  imports: [BrowserModule, NgbModule,DatetimemodalModule, ReactiveFormsModule,],
   declarations: [VehicleComponent],
   exports: [VehicleComponent],
   bootstrap: [VehicleComponent],

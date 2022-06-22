@@ -1,1 +1,48 @@
-<p>parkinglot works!</p>
+<div *ngIf="valetVehicleMap.size == 0" class="d-flex justify-content-center">
+  Please enter number of Parking Spaces in your Parking Lot.
+</div>
+
+<div *ngIf="valetVehicleMap.size == 0" class="d-flex justify-content-center">
+  <input 
+  type="number"
+  #numParkingSpace
+  >
+  <button (click)="createParkingSpaces(numParkingSpace.value)">Create Parking Lot</button>
+</div>
+
+<!-- <div *ngIf="valetVehicleList.length >  0"> -->
+<div *ngIf="valetVehicleMap.size > 0">
+  <form>
+    <div class="mb-3 row">
+      <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label">Search:</label>
+      <div class="col-xs-3 col-sm-auto">
+        <input id="table-filtering-search" class="form-control" type="text" [formControl]="filter">
+      </div>
+    </div>
+  </form>
+  
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Model</th>
+      <th scope="col">Make</th>
+      <th scope="col">Color</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+    </tr>
+    </thead>
+    <tbody>
+     <!-- Add a tag with link to record  -->
+    <tr  *ngFor="let vehicle of vehicles$ | async | keyvalue; " (click)="getSelected(vehicle.value.parkingSpace)">
+        <!-- <th scope="row">{{ ConvertToInt(vehicle.key) +1 }}</th> -->
+        <td><ngb-highlight [result]="vehicle.value.parkingSpace + 1 | number"  [term]="filter.value"></ngb-highlight></td>
+        <td><ngb-highlight [result]="vehicle.value.make" [term]="filter.value"></ngb-highlight></td>
+        <td><ngb-highlight [result]="vehicle.value.model" [term]="filter.value"></ngb-highlight></td>
+        <td><ngb-highlight [result]="vehicle.value.color" [term]="filter.value"></ngb-highlight></td>
+        <td><ngb-highlight [result]="vehicle.value.firstName" [term]="filter.value"></ngb-highlight></td>
+        <td><ngb-highlight [result]="vehicle.value.lastName" [term]="filter.value"></ngb-highlight></td>
+    </tr>
+    </tbody>
+  </table>
+</div>  
